@@ -9,9 +9,9 @@ else:
         result = n % i
         if result == 0:
             is_prime = False
-            break
+            # break 不要
 
-if is_prime == True:
+if is_prime:
     print("YES")
 else:
     print("NO")
