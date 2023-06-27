@@ -1,17 +1,18 @@
 N = int(input())
-a = 2
+is_prime = [True] * 6000001
+is_prime[0] = False
+is_prime[1] = False
 
-for num in range(N):
-    is_prime = True
+for i in range(2, 6000001):
+    if is_prime[i]:
+        for j in range(i**2, 6000001, i):
+            is_prime[j] = False
+for k in range(N):
     num = int(input())
-    if num == 1:
-        is_prime = False
-    else:
-        for i in range(2, int(num**0.5) + 1):
-            result = num % i
-            if result == 0:
-                is_prime = False
-    if is_prime == True:
+    if is_prime[num]:
         print("pass")
     else:
         print("failure")
+
+# あらかじめ範囲内の全ての素数を算出しておき、
+# 入力された値をそれと比較すると計算量を減らすことができる
