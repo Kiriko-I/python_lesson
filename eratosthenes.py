@@ -14,7 +14,10 @@ primes = []
 for i, j in enumerate(is_prime): # なじみがないのでいつかrangeに直してみる
     if j == "YES":
         primes.append(i)
-print(primes)
+if primes[-1] == N:
+    print("YES")
+else:
+    print("NO")
 
 # その数が素数かどうかを判定するプログラムの回答例
 
